@@ -60,10 +60,11 @@
 
 .bioformats_jar_dst <- function(ver) {
   jar_filename <- sprintf("bioformats_package_%s.jar", ver)
-  cache_dir <- tools::R_user_dir("RBioFormats", which = "cache")
-  if (!dir.exists(cache_dir))
-    dir.create(cache_dir, recursive = TRUE)
-  file.path(cache_dir, jar_filename)
+#  cache_dir <- tools::R_user_dir("RBioFormats", which = "cache")
+#  if (!dir.exists(cache_dir))
+#    dir.create(cache_dir, recursive = TRUE)
+#  file.path(cache_dir, jar_filename)
+  system.file(file.path("omejar", jar_filename), package="RBioFormats")
 }
 
 .init_formattools <- function() {
