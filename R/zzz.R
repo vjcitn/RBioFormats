@@ -39,7 +39,7 @@
     # The default for timing out the file download is 60s
     # Temporarily increase it if this is the case
     orig_timeout <- getOption("timeout")
-    options(timeout = max(100, orig_timeout))
+    options(timeout = max(3000, orig_timeout))
     tryCatch(utils::download.file(bf_url, bf_jar, mode = "wb", quiet = FALSE),
              error = function(e) {
                file.remove(bf_jar)
